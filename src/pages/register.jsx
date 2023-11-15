@@ -3,8 +3,40 @@ import logo from "../assets/img/life-well-logo.png";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import SplitLine from "../components/SplitLine";
+import { useState } from "react";
 
 export default function Register() {
+  const [email, setEmail] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (
+      !email ||
+      !fullname ||
+      !phone ||
+      !password ||
+      !confirmPassword ||
+      isNaN(phone)
+    ) {
+      alert("mohon periksa form anda sekali lagi!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("kata sandi tidak sama");
+      return;
+    }
+    setEmail("");
+    setFullname("");
+    setPhone("");
+    setPassword("");
+    setConfirmPassword("");
+  };
+
   return (
     <div className="bg-green-50 flex items-center justify-center">
       <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] my-10 sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
@@ -18,35 +50,45 @@ export default function Register() {
           text={"Nama lengkap"}
           type={"text"}
           name={"fullname"}
+          input={fullname}
+          setInput={setFullname}
           placeholder={"Masukkan nama lengkap"}
         />
         <Input
           text={"Email"}
           type={"email"}
           name={"email"}
+          input={email}
+          setInput={setEmail}
           placeholder={"Masukkan alamat email"}
         />
         <Input
           text={"Nomor handphone"}
           type={"text"}
           name={"phone_number"}
+          input={phone}
+          setInput={setPhone}
           placeholder={"Masukkan nomor handphone"}
         />
         <Input
           text={"Kata sandi"}
           type={"password"}
           name={"password"}
+          input={password}
+          setInput={setPassword}
           placeholder={"Masukkan kata sandi"}
         />
         <Input
           text={"Ulangi sandi"}
           type={"password"}
           name={"confirm_password"}
+          input={confirmPassword}
+          setInput={setConfirmPassword}
           placeholder={"Masukkan ulang kata sandi"}
         />
 
         <div className="mt-10">
-          <Button text={"Daftar"} type={"primary"} />
+          <Button text={"Daftar"} type={"primary"} handleClick={handleClick} />
         </div>
         <div className="relative flex py-5 items-center">
           <SplitLine />

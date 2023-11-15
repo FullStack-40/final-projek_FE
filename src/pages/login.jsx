@@ -3,8 +3,23 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import SplitLine from "../components/SplitLine";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("mohon periksa form anda sekali lagi!");
+      return;
+    }
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <div className=" bg-green-50 h-[100vh] flex items-center justify-center">
       <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
@@ -18,12 +33,16 @@ function Login() {
           text={"Email"}
           type={"email"}
           name={"email"}
+          input={email}
+          setInput={setEmail}
           placeholder={"Masukkan alamat email"}
         />
         <Input
           text={"Kata sandi"}
           type={"password"}
           name={"password"}
+          input={password}
+          setInput={setPassword}
           placeholder={"Masukkan kata sandi"}
         />
 
@@ -33,7 +52,7 @@ function Login() {
           </p>
         </div>
         <div className="mt-10">
-          <Button text={"Masuk"} type={"primary"} />
+          <Button text={"Masuk"} type={"primary"} handleClick={handleClick} />
         </div>
         <div className="relative flex py-5 items-center">
           <SplitLine />
