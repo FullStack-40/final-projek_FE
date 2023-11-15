@@ -2,7 +2,7 @@
 export default function Button({ text }) {
   return (
     <>
-      <button className="py-2 rounded-md w-full font-bold text-lg border  bg-primary text-white">
+      <button className="py-2 rounded-md w-full font-bold border bg-primary text-white text-base md:text-lg">
         {text}
       </button>
     </>

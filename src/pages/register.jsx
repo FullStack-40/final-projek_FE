@@ -6,12 +6,14 @@ import SplitLine from "../components/SplitLine";
 
 export default function Register() {
   return (
-    <div className="container bg-green-50 flex items-center justify-center">
-      <div className="border shadow-md rounded-md bg-white p-6 w-[30vw] my-10">
+    <div className="bg-green-50 flex items-center justify-center">
+      <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] my-10 sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
         <div className="flex justify-center">
           <img src={logo} alt="lifewell logo" />
         </div>
-        <h1 className="font-semibold text-2xl text-center mt-4 mb-6">Daftar</h1>
+        <h1 className="font-semibold text-center mt-4 mb-6  sm:text-lg md:text-xl lg:text-2xl">
+          Daftar
+        </h1>
         <Input
           text={"Nama lengkap"}
           type={"text"}
@@ -50,7 +52,7 @@ export default function Register() {
           <SplitLine />
         </div>
         <div>
-          <button className="bg-white py-2 rounded-sm w-full font-bold text-lg border border-primary">
+          <button className="bg-white py-2 rounded-sm w-full font-bold border border-primary">
             <div className="flex justify-center items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,12 +78,12 @@ export default function Register() {
                   fill="#E54335"
                 />
               </svg>
-              <p>Daftar dengan Google</p>
+              <p className="text-base md:text-lg">Daftar dengan Google</p>
             </div>
           </button>
         </div>
         <div className="flex justify-center mt-2 mb-5">
-          <p>
+          <p className="text-md">
             Sudah punya akun?{" "}
             <Link to="/login" className="text-blue-500 hover:cursor-pointer">
               Masuk

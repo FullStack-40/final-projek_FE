@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="container bg-green-50 w-[100vw] h-[100vh] flex items-center justify-center">
-      <div className="border shadow-md rounded-md bg-white p-6 w-[30vw]">
+    <div className=" bg-green-50 h-[100vh] flex items-center justify-center">
+      <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
         <div className="flex justify-center">
           <img src={logo} alt="lifewell logo" />
         </div>
-        <h1 className="font-semibold text-2xl text-center mt-4 mb-6">Masuk</h1>
+        <h1 className="font-semibold text-base text-center mt-4 mb-6 sm:text-lg md:text-xl lg:text-2xl">
+          Masuk
+        </h1>
         <Input
           text={"Email"}
           type={"email"}
@@ -26,7 +28,9 @@ function Login() {
         />
 
         <div className="flex justify-end -mt-10">
-          <p className="text-blue-500 hover:cursor-pointer">Lupa password?</p>
+          <p className="text-blue-500 hover:cursor-pointer text-base">
+            Lupa password?
+          </p>
         </div>
         <div className="mt-10">
           <Button text={"Masuk"} type={"primary"} />
@@ -35,7 +39,7 @@ function Login() {
           <SplitLine />
         </div>
         <div>
-          <button className="bg-white py-2 rounded-sm w-full font-bold text-lg border border-primary">
+          <button className="bg-white py-2 rounded-sm w-full font-bold border border-primary">
             <div className="flex justify-center items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,12 +65,12 @@ function Login() {
                   fill="#E54335"
                 />
               </svg>
-              <p>Masuk dengan Google</p>
+              <p className="text-base md:text-lg">Masuk dengan Google</p>
             </div>
           </button>
         </div>
         <div className="flex justify-center mt-2 mb-5">
-          <p>
+          <p className="text-md">
             Belum punya akun?{" "}
             <Link className="text-blue-500 hover:cursor-pointer" to="/register">
               Daftar
