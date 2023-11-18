@@ -47,9 +47,12 @@ function Login() {
         />
 
         <div className="flex justify-end -mt-10">
-          <p className="text-blue-500 hover:cursor-pointer text-base">
+          <Link
+            className="text-blue-500 hover:cursor-pointer text-base"
+            to="/forgot-password"
+          >
             Lupa password?
-          </p>
+          </Link>
         </div>
         <div className="mt-10">
           <Button text={"Masuk"} type={"primary"} handleClick={handleClick} />
