@@ -11,9 +11,9 @@ const ArticleDetails = () => {
     <>
     <NavbarArticle />
     <div>
-        <img src={ArticleMainImg} alt="" className='w-full h-[70vh]'/>
+        <img src={ArticleMainImg} alt="" className='w-full h-[50vh] bg-cover bg-no-repeat md:h-[70vh]'/>
     </div>
-    <div className='ml-[260px] mr-[260px]'>
+    <div className='ml-[130px] mr-[130px] md:ml-[260px] md:mr-[260px]'>
       <div className='mt-7 font-bold'>
         <p><a href="#" className='text-primary-color'>Home</a> / <a href="#" className='text-primary-color'>Artikel </a> / <a href="#" className='text-other-color'>Pentingnya Gizi Seimbang: Tips untuk Mencapai Diet yang Sehat</a></p>
         <p className='text-xl text-other-color mt-2'>Gizi</p>
@@ -46,21 +46,21 @@ const ArticleDetails = () => {
       <div>
         <h3 className='font-bold text-xl'>Artikel Terkait</h3>
       </div>
-      <div className='flex mb-14'>
+      <div className='flex justify-items-center items-center mb-14'>
         <div>
           <img src={OtherArticleImg} alt="Articles" className=' rounded-md mt-5 mb-4 w-[50%]'/>
           <h3 className='font-bold w-[50%] mb-5'>"Ketahui Fakta dan Mitos Diet Rendah Karbohidrat"</h3>
-          <a href="#" className='bg-primary-color text-white w-full px-5 py-2 inline-blockblock'>Lihat Selengkapnya</a>
+          <a href="#" className='bg-primary-color text-white text-sm px-3 md:px-5 py-2 inline-blockblock rounded'>Lihat Selengkapnya</a>
         </div>
         <div>
           <img src={OtherArticleImg} alt="Articles" className=' rounded-md mt-5 mb-4 w-[50%]'/>
           <h3 className='font-bold w-[50%] mb-5'>"Ketahui Fakta dan Mitos Diet Rendah Karbohidrat"</h3>
-          <a href="#" className='bg-primary-color text-white w-full px-5 py-2 inline-blockblock'>Lihat Selengkapnya</a>
+          <a href="#" className='bg-primary-color text-white text-sm px-3 md:px-5 py-2 inline-blockblock rounded'>Lihat Selengkapnya</a>
         </div>
         <div>
           <img src={OtherArticleImg} alt="Articles" className=' rounded-md mt-5 mb-4 w-[50%]'/>
           <h3 className='font-bold w-[50%] mb-5'>"Ketahui Fakta dan Mitos Diet Rendah Karbohidrat"</h3>
-          <a href="#" className='bg-primary-color text-white w-full px-5 py-2 inline-blockblock'>Lihat Selengkapnya</a>
+          <a href="#" className='bg-primary-color text-white text-sm px-3 md:px-5 py-2 inline-blockblock rounded'>Lihat Selengkapnya</a>
         </div>
       </div>
     </div>
