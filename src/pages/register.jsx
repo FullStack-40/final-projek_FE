@@ -4,6 +4,8 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import SplitLine from "../components/SplitLine";
 import { useState } from "react";
+import isEmail from "../utils/emailChecker";
+import Swal from "sweetalert2";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -22,14 +24,35 @@ export default function Register() {
       !confirmPassword ||
       isNaN(phone)
     ) {
-      alert("mohon periksa form anda sekali lagi!");
+      Swal.fire({
+        icon: "warning",
+        title: "Periksa form anda sekali lagi!",
+        showConfirmButton: false,
+        timer: 1200,
+      });
+      return;
+    }
+
+    if (!isEmail(email)) {
+      Swal.fire({
+        icon: "warning",
+        title: "Alamat email tidak valid!",
+        showConfirmButton: false,
+        timer: 1200,
+      });
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("kata sandi tidak sama");
+      Swal.fire({
+        icon: "warning",
+        title: "Kata sandi tidak sama!",
+        showConfirmButton: false,
+        timer: 1200,
+      });
       return;
     }
+
     setEmail("");
     setFullname("");
     setPhone("");
@@ -39,7 +62,7 @@ export default function Register() {
 
   return (
     <div className="bg-green-50 flex items-center justify-center">
-      <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] my-10 sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
+      <div className="border shadow-md rounded-md bg-white p-6 w-[90vw] my-10 sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
         <div className="flex justify-center">
           <img src={logo} alt="lifewell logo" />
         </div>

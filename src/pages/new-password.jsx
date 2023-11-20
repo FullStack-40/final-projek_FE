@@ -3,6 +3,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function NewPassword() {
   const [password, setPassword] = useState("");
@@ -13,11 +14,21 @@ function NewPassword() {
     e.preventDefault();
 
     if (!confirmpassword || !password) {
-      alert("mohon periksa form anda sekali lagi!");
+      Swal.fire({
+        icon: "warning",
+        title: "Periksa form anda sekali lagi!",
+        showConfirmButton: false,
+        timer: 1200,
+      });
       return;
     }
     if (confirmpassword !== password) {
-      alert("password tidak cocok");
+      Swal.fire({
+        icon: "warning",
+        title: "Kata sandi tidak sama!",
+        showConfirmButton: false,
+        timer: 1200,
+      });
       return;
     }
     setPassword("");
@@ -27,7 +38,7 @@ function NewPassword() {
 
   return (
     <div className=" bg-green-50 h-[100vh] flex items-center justify-center">
-      <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
+      <div className="border shadow-md rounded-md bg-white p-6 w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[35vw]">
         <div className="flex justify-center">
           <img src={logo} alt="lifewell logo" />
         </div>

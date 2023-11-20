@@ -14,7 +14,7 @@ function EmailVerification() {
 
   return (
     <div className=" bg-green-50 h-[100vh] flex items-center justify-center">
-      <div className="border shadow-md rounded-md bg-white p-6 w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[30vw]">
+      <div className="border shadow-md rounded-md bg-white p-6 w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[30vw]">
         <div className="flex justify-center">
           <img src={logo} alt="lifewell logo" />
         </div>
