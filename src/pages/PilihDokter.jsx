@@ -12,6 +12,7 @@ const PilihDokter = () => {
             <p>Konsultasikan masalah anda kepada kami</p>
         </div>
         <div className='flex gap-32 justify-center items-center'>
+
             {/* Card */}
             <div className='mt-10 w-[300px]'>
                 <img src={DoctorImg} alt="Doctor Image" className='rounded-lg mb-4'/>
@@ -57,6 +58,7 @@ const PilihDokter = () => {
                 </div>
             </div>
             {/* End Of Card */}
+            
         </div>
     </div>
     </>
