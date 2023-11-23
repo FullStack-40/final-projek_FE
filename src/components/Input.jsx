@@ -5,7 +5,7 @@ export default function Input({
   placeholder,
   name,
   input,
-  setInput,
+  handleChange,
 }) {
   return (
     <>
@@ -19,7 +19,7 @@ export default function Input({
         id={name}
         value={input}
         placeholder={placeholder}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={handleChange}
         className="outline outline-1 outline-slate-300 rounded-sm py-2 px-3 w-full h-7 mb-10 md:h-9 lg:h-10"
       />
     </>

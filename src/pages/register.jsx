@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/img/life-well-logo.png";
 import Button from "../components/Button";
 import Input from "../components/Input";
@@ -6,23 +6,35 @@ import SplitLine from "../components/SplitLine";
 import { useState } from "react";
 import isEmail from "../utils/emailChecker";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 export default function Register() {
-  const [email, setEmail] = useState("");
-  const [fullname, setFullname] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [user, setUser] = useState({
+    fullname: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  const handleClick = (e) => {
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClick = async (e) => {
     e.preventDefault();
     if (
-      !email ||
-      !fullname ||
-      !phone ||
-      !password ||
-      !confirmPassword ||
-      isNaN(phone)
+      !user.email ||
+      !user.fullname ||
+      !user.phone ||
+      !user.password ||
+      !user.confirmPassword ||
+      !user.phone
     ) {
       Swal.fire({
         icon: "warning",
@@ -33,7 +45,7 @@ export default function Register() {
       return;
     }
 
-    if (!isEmail(email)) {
+    if (!isEmail(user.email)) {
       Swal.fire({
         icon: "warning",
         title: "Alamat email tidak valid!",
@@ -43,21 +55,45 @@ export default function Register() {
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (user.password.length < 6) {
       Swal.fire({
         icon: "warning",
-        title: "Kata sandi tidak sama!",
-        showConfirmButton: false,
-        timer: 1200,
+        title: "Panjang kata sandi harus lebih dari 6 karakter!",
+        showConfirmButton: true,
       });
       return;
     }
 
-    setEmail("");
-    setFullname("");
-    setPhone("");
-    setPassword("");
-    setConfirmPassword("");
+    if (user.password !== user.confirmPassword) {
+      Swal.fire({
+        icon: "warning",
+        title: "Kata sandi tidak sama!",
+        showConfirmButton: true,
+      });
+      return;
+    }
+
+    const userData = {
+      name: user.fullname,
+      email: user.email,
+      phone_number: user.phone,
+      password: user.password,
+    };
+    try {
+      await axios.post("http://localhost:3000/auth/register", userData);
+      navigate("/email-verification", { replace: true });
+    } catch (error) {
+      let message;
+      if (error.response.data.error[0].msg) {
+        message = error.response.data.error[0].msg;
+      }
+      Swal.fire({
+        icon: "error",
+        title: `Gagal membuat akun! ${message}`,
+        showConfirmButton: true,
+      });
+      console.log(error);
+    }
   };
 
   return (
@@ -73,40 +109,40 @@ export default function Register() {
           text={"Nama lengkap"}
           type={"text"}
           name={"fullname"}
-          input={fullname}
-          setInput={setFullname}
+          input={user.fullname}
+          handleChange={handleChange}
           placeholder={"Masukkan nama lengkap"}
         />
         <Input
           text={"Email"}
           type={"email"}
           name={"email"}
-          input={email}
-          setInput={setEmail}
+          input={user.email}
+          handleChange={handleChange}
           placeholder={"Masukkan alamat email"}
         />
         <Input
           text={"Nomor handphone"}
           type={"text"}
-          name={"phone_number"}
-          input={phone}
-          setInput={setPhone}
+          name={"phone"}
+          input={user.phone}
+          handleChange={handleChange}
           placeholder={"Masukkan nomor handphone"}
         />
         <Input
           text={"Kata sandi"}
           type={"password"}
           name={"password"}
-          input={password}
-          setInput={setPassword}
+          input={user.password}
+          handleChange={handleChange}
           placeholder={"Masukkan kata sandi"}
         />
         <Input
           text={"Ulangi sandi"}
           type={"password"}
-          name={"confirm_password"}
-          input={confirmPassword}
-          setInput={setConfirmPassword}
+          name={"confirmPassword"}
+          input={user.confirmPassword}
+          handleChange={handleChange}
           placeholder={"Masukkan ulang kata sandi"}
         />
 

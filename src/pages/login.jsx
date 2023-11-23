@@ -2,19 +2,30 @@ import logo from "../assets/img/life-well-logo.png";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import SplitLine from "../components/SplitLine";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import isEmail from "../utils/emailChecker";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClick = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
+    if (!user.email || !user.password) {
       Swal.fire({
         icon: "warning",
         title: "Periksa form anda sekali lagi!",
@@ -24,7 +35,7 @@ function Login() {
       return;
     }
 
-    if (!isEmail(email)) {
+    if (!isEmail(user.email)) {
       Swal.fire({
         icon: "warning",
         title: "Alamat email tidak valid!",
@@ -34,8 +45,24 @@ function Login() {
       return;
     }
 
-    setEmail("");
-    setPassword("");
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/auth/login",
+        user
+      );
+      localStorage.setItem("token", data.data.token);
+      navigate("/", { replace: true });
+    } catch (error) {
+      let message;
+      if (error.response.status === 404) {
+        message = "Email atau kata sandi salah";
+      }
+      Swal.fire({
+        icon: "error",
+        title: `Gagal masuk ke akun! ${message}`,
+        showConfirmButton: true,
+      });
+    }
   };
 
   return (
@@ -51,16 +78,16 @@ function Login() {
           text={"Email"}
           type={"email"}
           name={"email"}
-          input={email}
-          setInput={setEmail}
+          input={user.email}
+          handleChange={handleChange}
           placeholder={"Masukkan alamat email"}
         />
         <Input
           text={"Kata sandi"}
           type={"password"}
           name={"password"}
-          input={password}
-          setInput={setPassword}
+          input={user.password}
+          handleChange={handleChange}
           placeholder={"Masukkan kata sandi"}
         />
 
