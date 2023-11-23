@@ -4,7 +4,7 @@ import DoctorImg from '../../assets/doctor/doctor1.png'
 const DataKonsultasi = () => {
   return (
     <>
-        <div className='ml-[130px] mr-[130px] flex flex-wrap'>
+        <div className='ml-[130px] mr-[130px] flex flex-wrap mb-10'>
             <div className='flex w-full border mt-6 px-3 py-3 rounded items-center justify-between'>
                 <img src={DoctorImg} alt="" className='w-[100px] rounded-full ml-5'/>
                 <div>
