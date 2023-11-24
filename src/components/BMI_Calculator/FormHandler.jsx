@@ -3,7 +3,7 @@ import React from 'react'
 const FormHandler = () => {
   return (
     <>
-        <div className='ml-[25%] mr-[25%] mt-16 md:ml-[35%] md:mr-[35%]'>
+        <div className='ml-[25%] mr-[25%] mt-16 md:ml-[30%] md:mr-[30%] lg:ml-[35%] lg:mr-[35%]'>
             <form action="#" className='flex flex-col'>
                 <label htmlFor="tinggiBadan">Tinggi Badan (CM)</label>
                 <input type="number" name="tinggiBadan" id="tinggiBadan" className='border py-2 px-5 rounded mt-3 mb-3'/>
