@@ -1,11 +1,11 @@
 import React from "react";
 import ArticleUser from "./pages/ArticleUser";
-import ArticleDetails from "./components/article_user/ArticleDetails";
-import PilihDokter from "./pages/PilihDokter";
+import SesiKonsultasi from "./pages/SesiKonsultasi";
+import CalculatorBMI from "./pages/CalculatorBMI";
 
 function App() {
   return <>
-    <PilihDokter />
+    <CalculatorBMI />
   </>;
 }
 
