@@ -1,9 +1,11 @@
 import React from 'react'
 import DoctorImg from '../../assets/doctor/doctor1.png'
+import NavbarArticle from '../article_user/NavbarArticle'
 
 const Profile = () => {
   return (
     <>
+    <NavbarArticle />
     <div className='ml-[130px] mr-[130px]'>
       <div className='mt-16 flex gap-10'>
           <img src={DoctorImg} alt="" className='rounded w-3/4'/>
