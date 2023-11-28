@@ -6,9 +6,18 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function NewPassword() {
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
+  const [newPassword, setNewPassword] = useState({
+    password: "",
+    confirmPassword: "",
+  });
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setNewPassword({
+      ...newPassword,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -31,8 +40,7 @@ function NewPassword() {
       });
       return;
     }
-    setPassword("");
-    setConfirmPassword("");
+
     navigate("/login", { replace: true });
   };
 
@@ -53,7 +61,7 @@ function NewPassword() {
           type={"password"}
           name={"password"}
           input={password}
-          setInput={setPassword}
+          handleChange={handleChange}
           placeholder={"Masukkan kata sandi"}
         />
         <Input
@@ -61,7 +69,7 @@ function NewPassword() {
           type={"password"}
           name={"confirmPassword"}
           input={confirmpassword}
-          setInput={setConfirmPassword}
+          handleChange={handleChange}
           placeholder={"Masukkan ulang kata sandi "}
         />
 

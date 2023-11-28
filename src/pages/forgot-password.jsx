@@ -10,6 +10,10 @@ function ForgotPassword() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleClick = (e) => {
     e.preventDefault();
 
@@ -55,7 +59,7 @@ function ForgotPassword() {
           type={"email"}
           name={"email"}
           input={email}
-          setInput={setEmail}
+          handleChange={handleChange}
           placeholder={"Masukkan alamat email"}
         />
 
