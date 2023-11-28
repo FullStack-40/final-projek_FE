@@ -106,7 +106,7 @@ function Login() {
           <SplitLine />
         </div>
         <div>
-          <button className="bg-white py-2 rounded-sm w-full font-bold border border-primary">
+          <button className="bg-white py-2 rounded-sm w-full font-bold border border-primary-color">
             <div className="flex justify-center items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

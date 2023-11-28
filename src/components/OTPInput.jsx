@@ -19,7 +19,7 @@ function OTPInput({ otp, setOtp }) {
           maxLength="1"
           value={digit}
           onChange={(e) => handleChange(e, index)}
-          className="w-12 h-12 m-2 text-center border border-primary rounded focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 "
+          className="w-12 h-12 m-2 text-center border border-primary-color rounded focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 "
         />
       ))}
     </div>
