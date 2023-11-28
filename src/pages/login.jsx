@@ -47,7 +47,7 @@ function Login() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/auth/login",
+        "https://easy-pear-termite-tutu.cyclic.app/auth/login",
         user
       );
       localStorage.setItem("token", data.data.token);
