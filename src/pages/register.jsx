@@ -80,7 +80,10 @@ export default function Register() {
       password: user.password,
     };
     try {
-      await axios.post("http://localhost:3000/auth/register", userData);
+      await axios.post(
+        "https://easy-pear-termite-tutu.cyclic.app/auth/register",
+        userData
+      );
       navigate("/email-verification", { replace: true });
     } catch (error) {
       let message;
