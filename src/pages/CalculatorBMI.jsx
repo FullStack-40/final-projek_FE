@@ -1,16 +1,16 @@
-import React from 'react'
-import NavbarArctile from '../components/article_user/NavbarArticle'
-import FormHandler from '../components/BMI_Calculator/FormHandler'
-import ButtonForm from '../components/BMI_Calculator/buttonForm'
+import React from "react";
+import Header from "../components/Header";
+import FormHandler from "../components/BMI_Calculator/FormHandler";
+import ButtonForm from "../components/BMI_Calculator/ButtonForm";
 
 const CalculatorBMI = () => {
   return (
     <>
-        <NavbarArctile />
-        <FormHandler />
-        <ButtonForm />
+      <Header />
+      <FormHandler />
+      <ButtonForm />
     </>
-  )
-}
+  );
+};
 
-export default CalculatorBMI
+export default CalculatorBMI;
