@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Profile = () => {
 
   const dataDoctor = 
@@ -7,7 +5,6 @@ const Profile = () => {
    
 
   return (
-    <>
       <div key={dataDoctor.id} className='ml-[130px] mr-[130px]'>
         <div className='mt-16 flex gap-10'>
             <img src={dataDoctor.profileImg} alt="" className='rounded w-3/4'/>
