@@ -51,6 +51,7 @@ function Login() {
         user
       );
       localStorage.setItem("token", data.data.token);
+      localStorage.setItem("user", JSON.stringify(data.data.user));
       navigate("/", { replace: true });
     } catch (error) {
       let message;

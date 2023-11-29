@@ -1,16 +1,16 @@
-import React from 'react'
-import NavbarArticle from '../components/article_user/NavbarArticle'
-import FilterKonsultasi from '../components/Konsultasi/FilterKonsultasi'
-import DataKonsultasi from '../components/Konsultasi/DataKonsultasi'
+import React from "react";
+import FilterKonsultasi from "../components/Konsultasi/FilterKonsultasi";
+import DataKonsultasi from "../components/Konsultasi/DataKonsultasi";
+import Header from "../components/Header";
 
 const SesiKonsultasi = () => {
   return (
     <>
-        <NavbarArticle />
-        <FilterKonsultasi />
-        <DataKonsultasi />
+      <Header />
+      <FilterKonsultasi />
+      <DataKonsultasi />
     </>
-  )
-}
+  );
+};
 
-export default SesiKonsultasi
+export default SesiKonsultasi;
