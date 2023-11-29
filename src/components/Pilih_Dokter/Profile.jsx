@@ -5,7 +5,7 @@ const Profile = () => {
    
 
   return (
-      <div key={dataDoctor.id} className='ml-[130px] mr-[130px]'>
+      <div key={dataDoctor.id} className='ml-[130px] mr-[130px] mt-32'>
         <div className='mt-16 flex gap-10'>
             <img src={dataDoctor.profileImg} alt="" className='rounded w-3/4'/>
             <div>
@@ -32,7 +32,6 @@ const Profile = () => {
             <input type="submit" value="Buat Janji" className='bg-primary-color text-white px-5 py-2 font-bold rounded w-full mt-5 mb-10 cursor-pointer hover:bg-other-color hover:text-cyan-100' />
         </div>
       </div>
-    </>
   )
 }
 

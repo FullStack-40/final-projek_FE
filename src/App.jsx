@@ -8,6 +8,7 @@ import PilihDokter from "./pages/PilihDokter";
 import ArticleUser from "./pages/ArticleUser";
 import CalculatorBMI from "./pages/CalculatorBMI";
 import SesiKonsultasi from "./pages/SesiKonsultasi";
+import ProfileDoctor from "./pages/ProfileDoctor";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/articles" element={<ArticleUser />} />
         <Route path="/bmi-calculator" element={<CalculatorBMI />} />
         <Route path="/consultations" element={<SesiKonsultasi />} />
+        <Route path="/profile" element={<ProfileDoctor />} />
       </Routes>
     </>
   );
