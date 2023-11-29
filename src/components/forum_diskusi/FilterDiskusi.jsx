@@ -14,7 +14,7 @@ const FilterDiskusi = () => {
 
   return (
     <>
-        <div className='border mt-5 w-[20%]'>
+        <div className='border mt-5 w-[20%] h-full'>
             <h2 className='font-bold text-xl text-center py-3'>Urutan Diskusi</h2>
             <form className='flex flex-col ml-4 mb-8'>
               <label htmlFor="terbaru" className='cursor-pointer'>
@@ -27,7 +27,7 @@ const FilterDiskusi = () => {
               </label>
             </form>
             <h3 className='text-center font-bold text-xl pb-3'>Kata Kunci Populer</h3>
-            <div className='flex flex-wrap justify-center items-center ml-5 mr-5 w-[70%] rounded'>
+            <div className='flex flex-wrap justify-center items-center ml-5 mr-5 w-[70%] rounded mb-5'>
               {popularTag.map(tags => (
                 <p key={tags.id} className='bg-primary-color px-3 py-1 text-white mt-2 rounded-full cursor-pointer hover:bg-other-color'>
                   #{tags.tag}

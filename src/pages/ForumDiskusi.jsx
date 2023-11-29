@@ -4,6 +4,7 @@ import BuatDiskusiButton from '../components/forum_diskusi/BuatDiskusiButton'
 import HeadingTextForum from '../components/forum_diskusi/HeadingTextForum'
 import InputSearchDiskusi from '../components/forum_diskusi/InputSearchDiskusi'
 import FilterDiskusi from '../components/forum_diskusi/FilterDiskusi'
+import UserComment from '../components/forum_diskusi/UserComment'
 
 const ForumDiskusi = () => {
   return (
@@ -15,8 +16,9 @@ const ForumDiskusi = () => {
                 <BuatDiskusiButton />
                 <InputSearchDiskusi />
             </div>
-            <div>
+            <div className='flex w-full gap-1'>
                 <FilterDiskusi />
+                <UserComment />
             </div>
         </div>
     </>
