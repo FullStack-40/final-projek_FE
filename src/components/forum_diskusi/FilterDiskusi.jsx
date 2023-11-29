@@ -17,12 +17,12 @@ const FilterDiskusi = () => {
         <div className='border mt-5 w-[20%]'>
             <h2 className='font-bold text-xl text-center py-3'>Urutan Diskusi</h2>
             <form className='flex flex-col ml-4 mb-8'>
-              <label htmlFor="terbaru">
-                <input type="radio" name="terbaru" id="terbaru" value="Terbaru" checked={true} />
+              <label htmlFor="terbaru" className='cursor-pointer'>
+                <input type="radio" name="terbaru" id="terbaru" value="Terbaru" checked={true} className='mr-1 cursor-pointer' />
                 Terbaru
               </label>
-              <label htmlFor="terlama">
-                <input type="radio" name="terbaru" id="terlama" value="Terlama" />
+              <label htmlFor="terlama" className='cursor-pointer'>
+                <input type="radio" name="terbaru" id="terlama" value="Terlama" className='mr-1 cursor-pointer' />
                 Terlama
               </label>
             </form>
