@@ -18,7 +18,7 @@ const HeroArticle = () => {
         </p>
         <a
           href="#"
-          className="bg-other-color text-third-color px-4 py-4 inline-block rounded-md font-bold mt-4 hover:bg-green-900"
+          className="bg-other-color text-third-color px-4 py-4 inline-block rounded-md font-bold mt-4 hover:bg-lime-950"
         >
           Lebih Lengkap
         </a>
