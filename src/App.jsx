@@ -1,10 +1,14 @@
 import React from "react";
-import ArticleUser from "./pages/ArticleUser";
+import Navbarlanding from "./components/landingpage/Navbarlanding";
+import Herolanding from "./components/landingpage/Herolanding";
 
 function App() {
-  return <>
-    <ArticleUser />
-  </>;
+  return (
+    <>
+      <Navbarlanding />
+      <Herolanding />
+    </>
+  );
 }
 
 export default App;
