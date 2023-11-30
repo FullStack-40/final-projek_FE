@@ -30,11 +30,11 @@ const PilihDokter = () => {
           </h1>
           <p>Konsultasikan masalah anda kepada kami</p>
         </div>
-        <div className="flex flex-wrap mb-10 gap-32 justify-center items-center">
+        <div className="flex flex-wrap mb-10 gap-24 justify-center items-center">
 
           {/* Card */}
           {doctors.map((doctor) => (
-            <div key={doctor._id} className="mt-10 w-[300px]">
+            <div key={doctor._id} className="mt-10 w-[300px] border rounded px-3 py-3">
               <img
                 src={doctor.profile_url}
                 alt="Doctor Image"
