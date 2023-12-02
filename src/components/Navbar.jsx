@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   const logOut = () => {
     localStorage.clear();
+    navigate("/", { replace: true });
   };
 
   const toggleDropdown = () => {
@@ -64,7 +66,7 @@ function Navbar() {
           </li>
           <li className="group">
             <Link
-              to="/"
+              to="/discussions"
               className="text-base text-white py-2 mx-6 flex group-hover:text-slate-300 lg:mx-2"
             >
               Forum Diskusi
@@ -139,7 +141,6 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="/list-doctor"
                         className="block px-4 py-2 hover:bg-gray-100 "
                         onClick={logOut}
                       >
