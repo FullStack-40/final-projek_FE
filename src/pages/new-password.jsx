@@ -22,21 +22,28 @@ function NewPassword() {
   const handleClick = (e) => {
     e.preventDefault();
 
-    if (!confirmpassword || !password) {
+    if (!newPassword.confirmPassword || !newPassword.password) {
       Swal.fire({
         icon: "warning",
         title: "Periksa form anda sekali lagi!",
-        showConfirmButton: false,
-        timer: 1200,
+        showConfirmButton: true,
       });
       return;
     }
-    if (confirmpassword !== password) {
+    if (newPassword.confirmPassword !== newPassword.password) {
       Swal.fire({
         icon: "warning",
         title: "Kata sandi tidak sama!",
-        showConfirmButton: false,
-        timer: 1200,
+        showConfirmButton: true,
+      });
+      return;
+    }
+
+    if (newPassword.password.length < 6) {
+      Swal.fire({
+        icon: "warning",
+        title: "Kata sandi terlalu pendek (min: 6)!",
+        showConfirmButton: true,
       });
       return;
     }
@@ -60,7 +67,7 @@ function NewPassword() {
           text={"Kata sandi"}
           type={"password"}
           name={"password"}
-          input={password}
+          input={newPassword.password}
           handleChange={handleChange}
           placeholder={"Masukkan kata sandi"}
         />
@@ -68,7 +75,7 @@ function NewPassword() {
           text={"Ulangi kata sandi"}
           type={"password"}
           name={"confirmPassword"}
-          input={confirmpassword}
+          input={newPassword.confirmPassword}
           handleChange={handleChange}
           placeholder={"Masukkan ulang kata sandi "}
         />
