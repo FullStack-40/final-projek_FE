@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 const ArticleList = () => {
@@ -31,7 +32,9 @@ const ArticleList = () => {
                 <a href="#" className='bg-primary-color text-white rounded-3xl px-5 py-1 inline-block mt-2 mb-2 font-bold text-sm'>{article.category}</a>
                 <p className='overflow-y-hidden h-[150px]'>{article.content}</p>
                 <div className='flex justify-end'>
-                  <a href="#" className='bg-primary-color text-white px-3 py-2 font-bold rounded-lg mt-5 mb-8 hover:bg-other-color'>Selengkapnya</a>
+                  <Link to={`/articles/${article._id}`} className='bg-primary-color text-white px-3 py-2 font-bold rounded-lg mt-5 mb-8 hover:bg-other-color'>
+                    Selengkapnya
+                  </Link>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ import CalculatorBMI from "./pages/CalculatorBMI";
 import SesiKonsultasi from "./pages/SesiKonsultasi";
 import ProfileDoctor from "./pages/ProfileDoctor";
 import ForumDiskusi from "./pages/ForumDiskusi";
+import ArticleDetails from "./components/article_user/ArticleDetails";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
         <Route path="/articles" element={<ArticleUser />} />
         <Route path="/bmi-calculator" element={<CalculatorBMI />} />
         <Route path="/consultations" element={<SesiKonsultasi />} />
-        <Route path="/profile" element={<ProfileDoctor />} />
+        <Route path="/doctors/:id" element={<ProfileDoctor />} />
         <Route path="/discussions" element={<ForumDiskusi />} />
+        <Route path="/articles/:id" element={<ArticleDetails />} />
       </Routes>
     </>
   );
