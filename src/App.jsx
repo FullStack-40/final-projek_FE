@@ -11,11 +11,13 @@ import SesiKonsultasi from "./pages/SesiKonsultasi";
 import ProfileDoctor from "./pages/ProfileDoctor";
 import ForumDiskusi from "./pages/ForumDiskusi";
 import ArticleDetails from "./components/article_user/ArticleDetails";
+import LandingPage from "./pages/landing-page";
 
 function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
