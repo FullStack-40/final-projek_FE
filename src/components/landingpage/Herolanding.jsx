@@ -12,9 +12,9 @@ const Herolanding = () => {
     <div>
       <div className="flex justify-between pt-20 pb-36 bg-primary-color mt-20">
         <div className=" text-white pl-32">
-          <h1 className="mb-3 text-4xl font-bold md:text-5xl">Livewell</h1>
+          <h1 className="mb-3 text-4xl font-bold md:text-5xl">LifeWell</h1>
           <p className="text-sm text-justify md:text-base">
-            Life Well adalah aplikasi website yang bertujuan
+            LifeWell adalah aplikasi website yang bertujuan
             <br /> untuk memberikan solusi kesehatan yang menyediakan
             <br /> fasilitas berupa sesi konsultasi gizi dan kesehatan dengan
             <br /> dokter-dokter yang sudah berpengalaman dibidangnya,
@@ -25,7 +25,7 @@ const Herolanding = () => {
             href="#"
             className="bg-other-color text-third-color px-4 py-4 inline-block rounded-md font-bold mt-7 hover:bg-green-900"
           >
-            konsultasi sekarang
+            Konsultasi Sekarang
           </a>
         </div>
         <div className="pr-32">
