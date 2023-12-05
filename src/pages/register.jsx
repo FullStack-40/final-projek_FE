@@ -84,7 +84,12 @@ export default function Register() {
         "https://easy-pear-termite-tutu.cyclic.app/auth/register",
         userData
       );
-      navigate("/email-verification", { replace: true });
+      Swal.fire({
+        icon: "success",
+        title: `Berhasil membuat akun!`,
+        showConfirmButton: true,
+      });
+      navigate("/login", { replace: true });
     } catch (error) {
       let message;
       if (error.response.data.error[0].msg) {
