@@ -10,26 +10,26 @@ import logoLifeWell from "../../assets/life-well-logo-navbar1.png";
 const Herolanding = () => {
   return (
     <div>
-      <div className="flex justify-between pt-20 pb-36 bg-primary-color mt-20">
-        <div className=" text-white pl-32">
-          <h1 className="mb-3 text-4xl font-bold md:text-5xl">Livewell</h1>
+      <div className="flex justify-between gap-10 pt-20 pb-36 bg-primary-color">
+        <div className=" text-white pl-32 mt-32 w-[50%]">
+          <h1 className="mb-3 text-4xl font-bold md:text-5xl">LifeWell</h1>
           <p className="text-sm text-justify md:text-base">
-            Life Well adalah aplikasi website yang bertujuan
-            <br /> untuk memberikan solusi kesehatan yang menyediakan
-            <br /> fasilitas berupa sesi konsultasi gizi dan kesehatan dengan
-            <br /> dokter-dokter yang sudah berpengalaman dibidangnya,
-            <br /> juga membantu Anda mencapai tujuan kesehatan Anda
-            <br /> dengan mudah dan efektif.
+            LifeWell adalah aplikasi website yang bertujuan
+            untuk memberikan solusi kesehatan yang menyediakan
+            fasilitas berupa sesi konsultasi gizi dan kesehatan dengan
+            dokter-dokter yang sudah berpengalaman dibidangnya,
+            juga membantu Anda mencapai tujuan kesehatan Anda
+            dengan mudah dan efektif.
           </p>
           <a
             href="#"
             className="bg-other-color text-third-color px-4 py-4 inline-block rounded-md font-bold mt-7 hover:bg-green-900"
           >
-            konsultasi sekarang
+            Konsultasi Sekarang
           </a>
         </div>
-        <div className="pr-32">
-          <img className=" w-96 h-auto" src={gambar1} alt="" />
+        <div className="pr-32 mt-16 w-[50%]">
+          <img className="w-full" src={gambar1} alt="" />
         </div>
       </div>
 
